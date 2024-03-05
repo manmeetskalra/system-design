@@ -1,6 +1,6 @@
 # Design a Chat based application
 
-#### Features:
+## Features:
 
 - One to One chat
 - Group Messaging
@@ -9,7 +9,7 @@
 - Online/Last seen
 - Chats are deleted (Optional)
 
-- ##### Image Service:
+- ### Image Service:
 
   - Storing Images
   - It is kinda tedious process. Now lets discuss, how can we store images
@@ -26,7 +26,7 @@
       - Files are static, so we can have CDN for fast access
       - We will still have a db that will store - profile_id, image_id and image_url. image_url will be location for a distributed file system, for above benefits
 
-- ##### One to One Chat
+- ### One to One Chat
 
   - You have applications on your mobile phones and you're connected to Chat System's cloud
   - Firstly, a peer should be connected to a gateway, rather than directly reaching to a controller/service.
@@ -43,13 +43,13 @@
     - But sending a message to UserB will not be possible over an HTTP protocol, as it supports Client-Server Architecture. So we need some Peer-Peer sevice over TCP, like WebSockets.
     - WebSockets will allow user to send message and vice versa too.
 
-- ##### Sent, Delivered, Read receipts
+- ### Sent, Delivered, Read receipts
 
   - Once Sessions service gets a message, it will return a response that the message is delivered.
   - Once Sessions service gets a message to UserB and it is delivered. UserB sends a delivery receipt and it routes the same message to UserA
   - The moment UserB opens and reads the message, it will send a receipt and it will be send to Sessions service and then UserA
 
-- ##### Online/Last Seen:
+- ### Online/Last Seen:
   - This feature is only possible when a specific user asks Sessions Service when was UserA was online
   - But this all data needs to be stored in db and updated concurrently for all users
   - For the sake of simplicity, we can have a threshold for example 10 sec before updating the last seen
@@ -57,7 +57,7 @@
 
 ![Chat System](ChatSystem1.png)
 
-- ##### Group Messaging
+- ### Group Messaging
   - Lets say UserA, UserB, UserC are connected in a group Group1 and UserD, UserC, UserE are connected in other group Group2
   - These users can be connected to any gateways. Sessions service stores the information about users and gateways.
   - To store group informations in sessions service it is quite complex. So, we create a new Service called GroupService.
