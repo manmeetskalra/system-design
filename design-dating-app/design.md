@@ -1,13 +1,13 @@
 # Design Dating App as a Microservice
 
-#### Before starting:
+## Before starting:
 
 When designing a system, if I would have to start, I would think:
 
 - The first step is to think what kind of features, I am gonna provide the user with this app.
 - Probably then, I'll move onto architecture and other things
 
-#### Features:
+## Features:
 
 Lets say the features, that I think users will like to have is:
 
@@ -22,7 +22,7 @@ Lets say the features, that I think users will like to have is:
   -
 - Chatbox with matches
 
-#### Profile Feature:
+## Profile Feature:
 
 - Storing profile details
 - Storing Images
@@ -40,7 +40,7 @@ Lets say the features, that I think users will like to have is:
       - Files are static, so we can have CDN for fast access
       - We will still have a db that will store - profile_id, image_id and image_url. image_url will be location for a distributed file system, for above benefits
 
-#### Basic System Design:
+## Basic System Design:
 
 We have our client application, gateway service, Profile service
 
@@ -79,11 +79,11 @@ We have our client application, gateway service, Profile service
   - With every new chat_id, we will have an attached user_id that can be stored in another service that can handle sessions called `Sessions Service` which will store connection information in a different table.
   - When a message is sent, it first goes to `Matcher Service` for authentication and then redirected to `Sessions Service` which then sends it to the `user_id` where the message is needed to be sent
 
-### Note:
+## Note:
 
 If the app is uninstalled, the only information we lose is likes sent which holds less priority. All the matches can be pulled from `Matcher Service` and chats from `Session Service` and profile from `Profile Service`
 
-#### Recommendation feature:
+## Recommendation feature:
 
 - `Profile Service` holds on some other information like age, gender and location
 - We can use these information for recommendation
