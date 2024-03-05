@@ -1,16 +1,16 @@
-# Database Paragigms
+# Database Paradigms
 
-#### There are 7 different database paradigms
+### There are 7 different database paradigms
 
-- ##### 1. Key-Value pair
-- ##### 2. Wide-Column DB
-- ##### 3. Document
-- ##### 4. Relational
-- ##### 5. Graph
-- ##### 6. Search
-- ##### 7. Multi model
+- ### 1. Key-Value pair
+- ### 2. Wide-Column DB
+- ### 3. Document
+- ### 4. Relational
+- ### 5. Graph
+- ### 6. Search
+- ### 7. Multi model
 
-#### Key-Value Pair:
+## Key-Value Pair:
 
 - Popular databases: Redis, Memcached
 - Database is structured as a Javascript object
@@ -23,7 +23,7 @@
     - Best used for caching, PUB/SUB or Leaderboards to reduce data latency
     - Mostly used for caching on other persistent data layer
 
-#### Wide Column DB
+## Wide Column DB
 
 ![](assets/db2.png)
 
@@ -37,7 +37,7 @@
 - Used to store time-series data like records from IoT devices or history of what netflix shows you have watched at what time
 - Used in the situation when you have frequent writes but very less reads
 
-#### Document
+## Document
 
 ![](assets/db3.png)
 
@@ -56,7 +56,7 @@
 - Best place to start but not ideal for something like graphs (social media)
   ![](assets/db3_1.png)
 
-#### Relational
+## Relational
 
 ![](assets/db4.png)
 
@@ -70,7 +70,7 @@
 - Not good to scale, except for some new dbs for example CockroachDB
 - Not ideal for unstructured data
 
-#### Graph
+## Graph
 
 ![](assets/db5.png)
 
@@ -81,9 +81,10 @@
 - Better performance on a larger datasets
 - Best used for graphs, Knowledge graphs, recommendation engines
 - Mostly used for social media, fraud detection
-  ![](assets/db5_1.png)
+  
+![](assets/db5_1.png)
 
-#### Search
+## Search
 
 ![](assets/db6.png)
 
@@ -96,7 +97,7 @@
   - Also runs a vatiety of algorithms like ranking, handle typo etc
 - Most used for Search engines, typeahead like search boxes
 
-#### Multimodel
+## Multimodel
 
 ![](assets/db7_1.png)
 
