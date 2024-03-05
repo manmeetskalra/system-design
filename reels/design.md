@@ -1,6 +1,6 @@
 # Reels
 
-#### Clarifying Questions:
+## Clarifying Questions:
 
 - Use Cases?
   - Video uploads
@@ -13,7 +13,7 @@
 - What will be some success metrics?
   - Time on App: maximize (1 hour per day)
 
-#### Non-functional Requirements/Detailed Calculations:
+## Non-functional Requirements/Detailed Calculations:
 
 - lets say 100 sec video on average
 - 1080\*1920 pixels: 1MB per video
@@ -33,9 +33,9 @@
   - 1B per day / 100,000 ~ 10,000 videos per second
   - 100Gbps egress
 
-#### High level design
+## High level design
 
-- ##### Components:
+- ### Components:
 
   - Application Load Balancers
   - App Service
@@ -66,7 +66,7 @@
       - time_in_app
       - exclusion_profile
 
-- ##### Upload flow
+- ### Upload flow
 
   - Blob Storage:
     - Replicated db based on regions etc
@@ -81,7 +81,7 @@
   - Upload Service: (Service used to upload video to the app)
     - We will need to direct our data to Blob storage and Video Metadat
 
-- ##### Download/Stream flow
+- ### Download/Stream flow
 
   - App Service:
     - Talks to backend algorithm (Stream Service) to generate what to show the user, as soon as user opens the app.
@@ -92,7 +92,7 @@
     - It computes the list of video_ids to show to the user at the moment
     - Also, consistently computes the next set of video_ids based on followings, and current mood (how much time spend on what kind of videos, what kind of videos are being liked)
 
-#### Bottlenecks and Enhancements
+## Bottlenecks and Enhancements
 
 - ML Algorithm for stream service can have some latency while working on the cloud and throwing the user_ids but if we can package the the service itself with the app, it can reduce latency by using devices computing power to generate user_ids
 - For enhancements, have a tweaked parameter in ML algo to change video list for user to see how user reacts
