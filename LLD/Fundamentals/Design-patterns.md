@@ -70,3 +70,46 @@
 - Enforce logic: The Singleton pattern can enforce a certain logic or behavior in an application.
 
 ## Builder Design Pattern
+
+- Its a creational design pattern
+- Whenever we build a very complex object which has a lot of configuration in it, we use builder design pattern
+- Used extensively, as real life objects are complex
+
+### Example
+
+- Building a vehicle class, with different type of engines and its part, there can be a lot of things
+- Buiklding a desktop class, with a lot of parts that can be configured
+
+- Builder design pattern has 4 parts:  
+  ![](assets/1.png)
+  - Product: Example is Desktop
+  - Builder: DesktopBuilder, an abstract class that tells us which functions need to implemented by concreteBuilder
+  - ConcreteBuilder: Implement the functions that are mentioned, using the configured types
+  - Director: Actual generation of the product. Tells the direction/steps of building the product. (Kind of similar to main)(Optional)
+
+## Observer Design Pattern
+
+- Easy and widely used design pattern
+- Suppose we are logged into multiple devices like laptop, mobile etc. As soon as notification comes, all devices are updated at once
+- Similarly, a small change can lead to change in multiple places. That's when we need observer design pattern
+- Another way of thinking - there are some publishers that publish some change and then there are some subscriber that subscribe to those change. So as soon as publishers, publish change, all the subscribers get notified.
+
+## Abstract Factory Design Pattern
+
+- Creational Design Pattern, similar to Factory
+- Additional to Factory, if client is looking to add more specification, we can not have so many if blocks
+- Our facotry design pattern was creating concrete classes and objects. Our abstract factory will creat factories that will create class and object
+
+### Examples
+
+- Lets say if we have to create a Button and TextBox on different OS so we want to create a Facotry taht is abstract from Sclient
+
+## Adaptive Design Pattern
+
+- Adaptive DP is used to make two incompatible object are made compatible using adaptive class
+- The adapter pattern converts the interface of a class into another interface client expect. Adapter lets classes work together that couldnt otherwise because of incompatible interfaces.
+  ![](assets/3.png)
+
+### Example:
+
+![](assets/2.png)
